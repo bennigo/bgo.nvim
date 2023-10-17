@@ -23,6 +23,7 @@ return {
         vim.keymap.set('n', '<m-l>', function() ui.nav_file(3) end, { desc = "harpoon 3th file" })
         vim.keymap.set('n', '<m-;>', function() ui.nav_file(4) end, { desc = "harpoon 4th file" })
         vim.keymap.set('n', '<m-n>', function() term.gotoTerminal(1) end, { desc = "harpoon terminal 1" })
+        vim.keymap.set('t', '<m-j>', '<C-\\><C-n>', { desc = "enter normal mode in terminal" })
     end
 }
 

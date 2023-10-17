@@ -13,7 +13,7 @@ return {
         markdown = { 'prettier' },
         lua = { 'stylua' },
       },
-      format_on_save = true,
+      format_on_save = false,
       async = false,
       timout_ms = 500,
     }

@@ -14,6 +14,7 @@ local function setup()
         on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
     }
 end
+
 return {
     'nvim-treesitter/nvim-treesitter-context',
     setup()

@@ -16,6 +16,7 @@ return {
     -- Additional lua configuration, makes nvim stuff amazing!
     'folke/neodev.nvim',
   },
+
   config = function()
     -- import lspconfig plugin
     local lspconfig = require("lspconfig")
@@ -115,6 +116,12 @@ return {
       local hl = "DiagnosticSign" .. type
       vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
     end
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+      vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = false,
+      }
+    )
+
 
     -- configure python server
     lspconfig["pyright"].setup({

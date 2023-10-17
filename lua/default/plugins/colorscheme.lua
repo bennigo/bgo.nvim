@@ -1,24 +1,31 @@
 return {
   'sainnhe/everforest',
   'bluz71/vim-moonfly-colors',
-  'folke/tokyonight.nvim',
+  'navarasu/onedark.nvim',
+  "folke/tokyonight.nvim",
+  'bluz71/vim-nightfly-guicolors',
+  'ChristianChiarulli/nvcode-color-schemes.vim',
+  "rebelot/kanagawa.nvim",
+  "NLKNguyen/papercolor-theme",
+  "catppuccin/nvim",
+  'Mofiqul/dracula.nvim',
 
   {
     'bluz71/vim-nightfly-guicolors',
     priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
       -- load the colorscheme here
-      vim.cmd [[colorscheme nightfly]]
+      vim.cmd [[colorscheme kanagawa]]
     end,
   },
-  {
-    'ChristianChiarulli/nvcode-color-schemes.vim',
-    -- 'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
+  -- {
+  --   'ChristianChiarulli/nvcode-color-schemes.vim',
+  --   -- 'navarasu/onedark.nvim',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'onedark'
+  --   end,
+  -- },
   -- {
   --   -- Theme inspired by Atom
   --   'navarasu/onedark.nvim',

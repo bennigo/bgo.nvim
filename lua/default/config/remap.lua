@@ -29,72 +29,72 @@ keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 -- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- keymap("n", "<leader>pv", vim.cmd.Ex)
 
-keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- keymap("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 -- keymap("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
-keymap("n", "<leader><CR>", function()
-    vim.cmd("so")
+keymap('n', '<leader><CR>', function()
+  vim.cmd 'so'
 end)
 
 keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
-keymap("n", "J", "mzJ`z")
-keymap("n", "<C-d>", "<C-d>zz")
-keymap("n", "<C-u>", "<C-u>zz")
-keymap("n", "N", "Nzzzv")
-keymap("n", "n", "nzzzv")
-keymap("n", "*", "*zz", opts)
-keymap("n", "#", "#zz", opts)
-keymap("n", "g*", "g*zz", opts)
-keymap("n", "g#", "g#zz", opts)
+keymap('n', 'J', 'mzJ`z')
+keymap('n', '<C-d>', '<C-d>zz')
+keymap('n', '<C-u>', '<C-u>zz')
+keymap('n', 'N', 'Nzzzv')
+keymap('n', 'n', 'nzzzv')
+keymap('n', '*', '*zz', opts)
+keymap('n', '#', '#zz', opts)
+keymap('n', 'g*', 'g*zz', opts)
+keymap('n', 'g#', 'g#zz', opts)
 
 ---------------
-keymap("n", "Q", "<nop>")
-keymap("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+keymap('n', 'Q', '<nop>')
+keymap('n', '<C-f>', '<cmd>silent !tmux neww tmux-sessionizer<CR>')
 
-keymap("n", "<C-k>", "<cmd>cnext<CR>zz")
-keymap("n", "<C-j>", "<cmd>cprev<CR>zz")
-keymap("n", "<leader>k", "<cmd>lnext<CR>zz")
-keymap("n", "<leader>j", "<cmd>lprev<CR>zz")
+keymap('n', '<C-k>', '<cmd>cnext<CR>zz')
+keymap('n', '<C-j>', '<cmd>cprev<CR>zz')
+keymap('n', '<leader>k', '<cmd>lnext<CR>zz')
+keymap('n', '<leader>j', '<cmd>lprev<CR>zz')
 
 -- Better window navigation
 -- keymap("n", "<tab-h>", "<C-w>h", opts)
 -- keymap("n", "<tab-j>", "<C-w>j", opts)
 -- keymap("n", "<tab-k>", "<C-w>k", opts)
 -- keymap("n", "<mtab-l>", "<C-w>l", opts)
-keymap("n", "<m-tab>", "<c-6>", opts)
+keymap('n', '<m-tab>', '<c-6>', opts)
 
-keymap("n", "q", "<cmd>bdelete!<CR>", opts)
+keymap('n', 'q', '<cmd>bdelete!<CR>', opts)
 -- Remap for dealing with word wrap
 
-keymap("n", "<leader>f", vim.lsp.buf.format)
+keymap('n', '<leader>f', vim.lsp.buf.format)
 -- Diagnostic keymaps
-keymap('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-keymap('n', ']d', vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-keymap('n', 'gl', vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+keymap('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+keymap('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+keymap('n', 'gl', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+keymap('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- next greatest remap ever : asbjornHaland
-keymap("n", "<leader>Y", [["+Y]])
-keymap({ "n", "v" }, "<leader>y", [["+y]])
-keymap({ "n", "v" }, "<leader>d", [["_d]])
-keymap({ "n", "v" }, "<leader>w", "<cmd>w!<CR>")
+keymap('n', '<leader>Y', [["+Y]])
+keymap({ 'n', 'v' }, '<leader>y', [["+y]])
+keymap({ 'n', 'v' }, '<leader>d', [["_d]])
+keymap({ 'n', 'v' }, '<leader>w', '<cmd>w!<CR>')
 
 -- Insert --
-keymap("i", "jk", "<ESC>", opts) -- Press jk fast to enter
-keymap("i", "<C-c>", "<Esc>") -- This is going to get me cancelled
+keymap({ 'v', 'i' }, 'jk', '<ESC>', opts) -- Press jk fast to enter
+keymap('i', '<C-c>', '<Esc>') -- This is going to get me cancelled
 
 -- Visual --
 -- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+keymap('v', '<', '<gv', opts)
+keymap('v', '>', '>gv', opts)
 
 -- Move text up and down
-keymap("v", "J", ":m '>+1<CR>gv=gv")
-keymap("v", "K", ":m '<-2<CR>gv=gv")
+keymap('v', 'J', ":m '>+1<CR>gv=gv")
+keymap('v', 'K', ":m '<-2<CR>gv=gv")
 -- greatest remap ever
-keymap("x", "<leader>p", [["_dP]])
-keymap("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+keymap('x', '<leader>p', [["_dP]])
+keymap('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })

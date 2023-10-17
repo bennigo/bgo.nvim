@@ -32,7 +32,7 @@ local function setup()
         },
     })
 
-    -- neovim help
+    -- search files and text
     vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
     vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
     vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
@@ -133,6 +133,9 @@ local function setup()
 
     -- find spell suggestions of word under cursor
     vim.api.nvim_set_keymap("n", "<leader>ts", '<cmd>lua require("telescope.builtin").spell_suggest()<cr>', {})
+
+    -- vim.api.nvim_set_keymap('n', '<leader>cs', [[<cmd>Telescope colorscheme<cr>]], {noremap = true, silent = true})
+    vim.api.nvim_set_keymap('n', '<leader>cs', [[<cmd>:lua require'fzf-lua'.colorschemes({ winopts = { height=0.33, width=0.33 } })<cr>]], {noremap = true, silent = true})
 
     -- if IsAvailable('telescope-fzf-native') then
     -- https://github.com/nvim-telescope/telescope-fzf-native.nvim

@@ -3,6 +3,7 @@ return {
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
+	"tpope/vim-surround",
   'lyokha/vim-xkbswitch',
 
   {
@@ -18,5 +19,14 @@ return {
     'numToStr/Comment.nvim',
     event = { 'BufNewFile', 'BufReadPre' },
     config = true,
+  },
+  {
+    'ibhagwan/fzf-lua',
+    -- optional for icon support
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    config = function()
+      -- calling `setup` is optional for customization
+      require('fzf-lua').setup {}
+    end,
   },
 }

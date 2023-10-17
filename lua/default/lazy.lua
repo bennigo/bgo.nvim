@@ -19,7 +19,7 @@ require('lazy').setup({
   { import = 'default.plugins' },
   { import = 'default.plugins.lsp' },
 }, {
-  install = { colorscheme = { 'nightfly' } },
+  install = { colorscheme = { 'gruvbox' } },
   checker = { enabled = true, notify = false },
   change_detection = { notify = false },
 })
